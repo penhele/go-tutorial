@@ -1,0 +1,22 @@
+# Root directory of your project
+root = "."
+tmp_dir = "tmp"
+
+[build]
+cmd = "go build -o ./tmp/main.exe ."   # Build output ke tmp (agar tidak bentrok dengan proses Air)
+bin = "tmp/main.exe"                   # File build hasilnya
+delay = 1000                           # Delay agar Air tidak build terlalu sering
+exclude = ["tmp/*", "client/*"]
+include = ["**/*.go"]
+ignore = ["tmp/*"]
+
+[log]
+time = true
+
+[color]
+watcher = "yellow"
+build = "green"
+runner = "cyan"
+
+[screen]
+clear_on_rebuild = true
